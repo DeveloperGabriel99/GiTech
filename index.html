@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiTech - Acessórios Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav-bar">
+            <a href="#" class="logo">GiTech</a>
+            <div class="nav-cart">
+                <button id="open-cart-btn" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count" class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="home" class="home-section">
+            <div class="hero-content">
+                <h1 class="fade-in">Acessórios Premium para seu Celular</h1>
+                <p class="fade-in" style="animation-delay: 0.2s;">Qualidade e design que acompanham seu ritmo.</p>
+                <a href="#products" class="btn-explore fade-in" style="animation-delay: 0.4s;">Explorar Produtos</a>
+            </div>
+        </section>
+
+        <section id="products" class="product-catalog">
+            <h2 class="section-title slide-in">Nosso Catálogo</h2>
+            <div class="product-grid">
+                </div>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2>Seu Carrinho</h2>
+                <button class="close-btn" id="close-cart-btn">&times;</button>
+            </header>
+            
+            <div id="cart-items" class="cart-items-container">
+                <p class="cart-empty-message cart-empty">Seu carrinho está vazio.</p>
+            </div>
+
+            <div id="shipping-section" class="shipping-section">
+                <h3>Endereço de Entrega</h3>
+                <input type="text" id="address-cep" class="address-input" placeholder="Digite seu CEP para calcular o frete" required>
+                <input type="text" id="address-street" class="address-input" placeholder="Rua e Número" required>
+                <input type="text" id="address-district" class="address-input" placeholder="Bairro" required>
+                <input type="text" id="address-city" class="address-input" placeholder="Cidade e Estado" required>
+                <div id="shipping-result" class="shipping-result"></div>
+            </div>
+
+            <footer class="modal-footer">
+                <div class="cart-total">
+                    <strong>Total:</strong>
+                    <span id="cart-total-price">R$ 0,00</span>
+                </div>
+                <button id="checkout-btn" class="btn-checkout" disabled>Finalizar Compra</button>
+            </footer>
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=5511983370949&text=Ol%C3%A1!%20Tenho%20interesse%20nos%20produtos." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
