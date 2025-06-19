@@ -35,7 +35,17 @@
 
         <section id="products" class="product-catalog">
             <h2 class="section-title slide-in">Nosso Catálogo</h2>
-            <div class="product-grid">
+            
+            <div class="filter-container">
+                <input type="search" id="search-input" placeholder="Buscar por nome...">
+                <div id="filter-buttons" class="filter-buttons">
+                    <button class="filter-btn active" data-category="todos">Todos</button>
+                    <button class="filter-btn" data-category="capa">Capas</button>
+                    <button class="filter-btn" data-category="carregador">Carregadores</button>
+                </div>
+            </div>
+
+            <div id="product-grid" class="product-grid">
                 </div>
         </section>
     </main>
