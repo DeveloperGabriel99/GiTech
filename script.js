@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartModal = document.getElementById('cart-modal');
     
     // Novos elementos do DOM
+    const nameInput = document.getElementById('address-name'); // Campo de nome
     const cepInput = document.getElementById('address-cep');
     const streetInput = document.getElementById('address-street');
     const districtInput = document.getElementById('address-district');
@@ -188,8 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     checkoutBtn.addEventListener('click', () => {
-        if (!cepInput.value || !streetInput.value || !districtInput.value || !cityInput.value) {
-            alert('Por favor, preencha o endereço completo para a entrega.');
+        if (!nameInput.value || !cepInput.value || !streetInput.value || !districtInput.value || !cityInput.value) {
+            alert('Por favor, preencha todos os dados para a entrega.');
             return;
         }
 
@@ -211,11 +212,13 @@ document.addEventListener('DOMContentLoaded', () => {
         message += `\n*Subtotal:* R$ ${productsTotal.toFixed(2).replace('.', ',')}`;
         message += `\n*Frete:* R$ ${shippingCost.toFixed(2).replace('.', ',')}`;
         message += `\n*Total:* R$ ${finalTotal.toFixed(2).replace('.', ',')}`;
-        message += `\n\n*Endereço para Entrega:*\n`;
-        message += `${streetInput.value}\n`;
-        message += `${districtInput.value}\n`;
-        message += `${cityInput.value}\n`;
-        message += `CEP: ${cepInput.value}`;
+        
+        message += `\n\n*Dados para Entrega:*\n`;
+        message += `*Nome:* ${nameInput.value}\n`; // Nome adicionado aqui
+        message += `*Endereço:* ${streetInput.value}\n`;
+        message += `*Bairro:* ${districtInput.value}\n`;
+        message += `*Cidade:* ${cityInput.value}\n`;
+        message += `*CEP:* ${cepInput.value}`;
 
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
         
